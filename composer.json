@@ -1,0 +1,39 @@
+{
+  "name":"ixibei/spider",
+  "description":"website list collect",
+  "license":"mit",
+  "keywords":["spider","collect"],
+  "type":"library",
+  "version":"2.0.0",
+  "authors":[
+    {
+      "name":"ixibei",
+      "email":"993870545@qq.com",
+      "homepage":"http://www.onephper.com"
+    }
+  ],
+
+  "require":{
+    "php": ">=5.5.9"
+  },
+  "require-dev":{
+    "phpunit/phpunit":"5.5.*",
+    "monolog/monolog": "~1.11",
+    "ezyang/htmlpurifier": "dev-master",
+    "illuminate/support": "^5.1"
+  },
+  "autoload":{
+    "psr-4":{
+      "Spider\\":"src"
+    }
+  },
+
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  },
+
+  "minimum-stability": "dev"
+}
