@@ -1,5 +1,5 @@
 {
-  "name":"ixibei/spider",
+  "name":"byrnes2014/spider",
   "description":"website list collect",
   "license":"mit",
   "keywords":["spider","collect"],
@@ -7,9 +7,8 @@
   "version":"2.0.0",
   "authors":[
     {
-      "name":"ixibei",
-      "email":"993870545@qq.com",
-      "homepage":"http://www.onephper.com"
+      "name":"byrnes",
+      "email":"76119622@qq.com"
     }
   ],
 
