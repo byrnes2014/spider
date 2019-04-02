@@ -55,7 +55,15 @@ class Html extends Base{
                 }
                 continue;
             }
-            $arr['url'] = strpos($href->href,'http') === false ? $this->regular->url.'/'.ltrim($href->href,'/') : $href->href;//防止使用相对路径
+
+            //防止使用相对路径
+            if(strpos($href->href,'http') === false && substr($href->href,0,2) !== '//'){
+                $arr['url'] = $this->regular->url.'/'.ltrim($href->href,'/') ;
+            }else{
+                $arr['url'] = ltrim($href->href,'/') ;
+            }
+
+            // $arr['url'] = strpos($href->href,'http') === false ? $this->regular->url.'/'.ltrim($href->href,'/') : $href->href;
 
             //如果列表页存在标题的情况
             $arr['name'] = '';
@@ -75,7 +83,12 @@ class Html extends Base{
                 if(!$img){
                     if($this->test)  return $this->_parseError('文章封面标识错误 '.$this->regular->list_img.' 位置 '.$this->regular->list_img_pos);
                 } else {
-                    $arr['img'] = $img->src;
+
+                    if(strpos( $arr['img'],'http') === false && substr( $arr['img'],0,2) !== '//'){
+                        $arr['img'] =  $arr['img'].'/'.ltrim($img->src,'/') ;
+                    }else{
+                        $arr['img'] = ltrim($img->src,'/');
+                    }
                 }
             }
             if($this->test){
